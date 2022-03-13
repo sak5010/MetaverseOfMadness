@@ -148,6 +148,7 @@ namespace com.rfilkov.components
 
                 GameObject avatarObj = Instantiate(avatarModel, userPos, userRot);
                 avatarObj.name = "User-" + userId;
+                avatarObj.transform.position = transform.position;
 
                 ac = avatarObj.GetComponent<AvatarController>();
                 if (ac == null)
