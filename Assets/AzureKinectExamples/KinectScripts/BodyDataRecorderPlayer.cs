@@ -2,7 +2,8 @@
 using System.Collections;
 using System.IO;
 using com.rfilkov.kinect;
-
+using TMPro;
+using UnityEngine.UI;
 
 namespace com.rfilkov.components
 {
@@ -13,6 +14,7 @@ namespace com.rfilkov.components
     {
         [Tooltip("Path to the file used to record or replay the recorded data.")]
         public string filePath = "BodyRecording.txt";
+        public TextMeshProUGUI AAA;
 
         [Tooltip("UI-Text to display information messages.")]
         public UnityEngine.UI.Text infoText;
@@ -61,6 +63,8 @@ namespace com.rfilkov.components
         // starts recording
         public void StartRecording()
         {
+            filePath = AAA.text + ".txt";
+
             if (isRecording)
                 return;
 
@@ -127,6 +131,8 @@ namespace com.rfilkov.components
         // starts playing
         public void StartPlaying()
         {
+            filePath = AAA.text + ".txt";
+
             if (isPlaying)
                 return;
 
@@ -198,6 +204,8 @@ namespace com.rfilkov.components
         // stops recording or playing
         public void StopRecordingOrPlaying()
         {
+            filePath = AAA.text + ".txt";
+
             if (isRecording)
             {
                 isRecording = false;
